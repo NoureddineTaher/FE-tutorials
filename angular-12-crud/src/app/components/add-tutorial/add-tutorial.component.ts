@@ -21,21 +21,23 @@ export class AddTutorialComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveTutorial(): void {
+  save(): void {
     const data = {
       title: this.tutorial.title,
       description: this.tutorial.description
     };
 
     this.tutorialService.create(data)
+    
       .subscribe(
         response => {
-          console.log(response);
           this.submitted = true;
         },
+        
         error => {
           console.log(error);
         });
+        console.log("ttttttttttttt"+data)
   }
 
   newTutorial(): void {

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Tutorial } from '../models/tutorial.model';
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
+const postUrl = 'http://localhost:8080/api/tutorial';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +23,13 @@ export class TutorialService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(postUrl, data);
   }
 
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
+  
 
   delete(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);

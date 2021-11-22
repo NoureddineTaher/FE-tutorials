@@ -194,15 +194,9 @@ $(document).ready(function(){
                     </div>
                 </div>
             </div>
-
-
-							<button  (click) = "navigateTo()" class="view" title="View"  class="btn btn-success float-right"> create</button> 
-              
-              
+							<button  (click) = "navigateTo()" class="view" title="View"  class="btn btn-success float-right"> create </button>
+              <!--a routerLink="add" class="btn btn-success float-right"> create </a-->
               <br><br>
-
-
-
             <table class="table table-sm-12 table-hover table-bordered ">
                 <thead style="background-color: #dff0d8; " class="text-primary">
                     <tr>
@@ -222,8 +216,8 @@ $(document).ready(function(){
                      
 
                         <td>
-                          <a href="#" (click)="rederige(tu.id)" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                          <a href="#" class="edit" (click)="edit()"   title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                          <a href="#" (click)="view(tu.id)" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                          <a href="#" class="edit" (click)="edit(tu.id)"   title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                           <a href="#" (click)="delete(tu.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
@@ -248,84 +242,3 @@ $(document).ready(function(){
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="title"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchTitle()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <h4>Tutorials List</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)"
-      >
-        {{ tutorial.title }}
-      </li>
-    </ul>
-
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-      Remove All
-    </button>
-  </div>
-  <div class="col-md-6">
-    <div *ngIf="currentTutorial.id">
-      <h4>Tutorial</h4>
-      <div>
-        <label><strong>Title:</strong></label> {{ currentTutorial.title }}
-      </div>
-      <div>
-        <label><strong>Description:</strong></label>
-        {{ currentTutorial.description }}
-      </div>
-      <div>
-        <label><strong>Status:</strong></label>
-        {{ currentTutorial.published ? "Published" : "Pending" }}
-      </div>
-
-      <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
-        Edit
-      </a>
-    </div>
-
-    <div *ngIf="!currentTutorial">
-      <br />
-      <p>Please click on a Tutorial...</p>
-    </div>
-  </div>
-</div -->

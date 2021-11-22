@@ -30,9 +30,7 @@ export class TutorialsListComponent implements OnInit {
         });
   }
 
-  rederige(id:number){
-    this.router.navigate(['detail', id])
-  }
+ 
 
   delete(id:number) {
 
@@ -40,9 +38,17 @@ export class TutorialsListComponent implements OnInit {
         response =>{ this.getTutorials; console.log(id)}
     );
   }
+  view(id:number) {
 
-  edit(){
-    this.router.navigate(['tutorials/:id'])
+    this.tutorialService.get(id).subscribe (
+        response =>{ this.getTutorials; console.log(id)}
+    );
+  }
+  rederige(id:number){
+    this.router.navigate(['details', id])
+  }
+  edit(id:number){
+    this.router.navigate(['add',id])
   }
 
 
